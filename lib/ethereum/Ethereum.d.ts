@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
-declare class Ethereum {
+import EventContainer from "eventcontainer";
+declare class Ethereum extends EventContainer {
     provider: ethers.providers.WebSocketProvider;
     private ethereum;
     get existsWeb3Provider(): boolean;
@@ -9,6 +10,7 @@ declare class Ethereum {
     web3Signer: ethers.providers.JsonRpcSigner;
     constructor();
     getNetwork(): Promise<ethers.providers.Network>;
+    getWeb3Network(): Promise<ethers.providers.Network>;
     connected(): Promise<boolean>;
     connect(): Promise<void>;
 }

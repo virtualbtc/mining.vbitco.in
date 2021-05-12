@@ -1,4 +1,6 @@
-import Config from "./Config";
+import { DomNode } from "@hanul/skynode";
+import VBTCBar from "./VBTCBar";
 
-Config.PROVIDER_URL = "wss://kovan.infura.io/ws/v3/96ce12f4a29c44699587732ebf110b75";
-Config.VBTC_ADDRESS = "0xe7A287f9C52185C68156F59f6cC72581a4475E8E";
+const main = new DomNode(document.querySelector("main")!);
+
+new VBTCBar().appendTo(main);

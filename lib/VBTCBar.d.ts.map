@@ -1,0 +1,1 @@
+{"version":3,"file":"VBTCBar.d.ts","sourceRoot":"","sources":["../src/VBTCBar.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAM,MAAM,gBAAgB,CAAC;AAI7C,MAAM,CAAC,OAAO,OAAO,OAAQ,SAAQ,OAAO;IAExC,OAAO,CAAC,UAAU,CAAU;IAC5B,OAAO,CAAC,WAAW,CAAsB;;YAQ3B,cAAc;CAwB/B"}
