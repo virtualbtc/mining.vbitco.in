@@ -371,10 +371,10 @@
   resolved "https://registry.yarnpkg.com/@hanul/debouncer/-/debouncer-0.0.1.tgz#0c7b0242e6c54c02ea74a2939c529de6845c1235"
   integrity sha512-i5oU9vqA4bWHfleEGnykDH92q4Dtu1qmY1enn3cFlojEiSQFf7l1wrYjaYlN2kqkXRpXn4a/iEjWWPDtl5gJJg==
 
-"@hanul/skynode@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@hanul/skynode/-/skynode-0.0.2.tgz#809d9a46659be963ff204a0cd6f248a8a74f024d"
-  integrity sha512-CBXHzKAwV7W7j4m9YTzMvXB9W0NA0o1oFqKIO8ZwIJaNKPxURDGzRVAikI/l3XWjVU2/+YwExO6Dgz+TEjJGDA==
+"@hanul/skynode@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@hanul/skynode/-/skynode-0.0.3.tgz#09f1368996f48746e3363d80217200cb1fd47f77"
+  integrity sha512-nH42JSFOjT2C0NzjAfCUclUcOXbm+786HmxjftO+EhgizHInq0Ps/HAx5cJoj+VvMLrE2wR9EHO8sFS6lYpw4Q==
   dependencies:
     "@hanul/debouncer" "^0.0.1"
     eventcontainer "^0.0.2"
@@ -1671,6 +1671,11 @@ skyutil@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/skyutil/-/skyutil-0.0.1.tgz#fdd8255b2eeac3ee06e3643427e34db0ee42ab8b"
   integrity sha512-rcbUtbwiuOJs9rvZHzVUgV1UBhOa7KxnPEmQapfhzSwUAFM2THLNZuoF/8XMFEuznRqPMeYeABo8TFiFrgBL+w==
+
+skyutil@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/skyutil/-/skyutil-0.0.2.tgz#7b3f46b48d76d5c58c62f3ad709d4353a56e4901"
+  integrity sha512-SGHxCvdbqWVbHpnCurx7bWxZZZZIXdCRMf5BFz8/S70Xpg5n8X1+XwlGNrtOPfd4C451jQ8yEWOFs9EWTxfu6g==
 
 source-list-map@^2.0.0, source-list-map@^2.0.1:
   version "2.0.1"

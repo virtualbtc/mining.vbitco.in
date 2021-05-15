@@ -1,4 +1,3 @@
-@import url(https://rsms.me/inter/inter.css);
 /*
 https://github.com/Hanul/sky-css-base
 v0.0.1 | 20210109
@@ -175,7 +174,6 @@ input {
 body {
   background-color: #222222;
   color: #f2f2f2;
-  font-family: "Inter var", sans-serif;
 }
 body > header h1 {
   display: flex;

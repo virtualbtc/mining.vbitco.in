@@ -1,4 +1,5 @@
 import { DomNode, el } from "@hanul/skynode";
+import { ethers } from "ethers";
 import Ethereum from "./ethereum/Ethereum";
 import VirtualBitcoinContract from "./ethereum/VirtualBitcoinContract";
 
@@ -32,7 +33,7 @@ export default class VBTCBar extends DomNode {
                     },
                 })));
             } else {
-                const amount = (await VirtualBitcoinContract.balanceOf(Ethereum.accountAddress)).toString();
+                const amount = ethers.utils.formatUnits(await VirtualBitcoinContract.balanceOf(Ethereum.accountAddress), VirtualBitcoinContract.decimals);
                 this.vbtcAmount.empty().appendText(amount);
             }
         }
