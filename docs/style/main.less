@@ -7,9 +7,18 @@
     font-style : normal;
 }
 
+@import url("https://rsms.me/inter/inter.css");
+
 body {
     background-color: rgb(34, 34, 34);
     color           : rgb(242, 242, 242);
+    font-family     : "Inter var", sans-serif;
+    line-height     : 1.6;
+}
+
+a {
+    color          : rgb(255, 115, 36);
+    text-decoration: none;
 }
 
 body>header {
@@ -26,5 +35,47 @@ body>header {
             height      : 32px;
             margin-right: 15px;
         }
+    }
+
+    p {
+        padding: 20px 30px;
+
+        @media @phone {
+            padding: 20px;
+        }
+    }
+}
+
+main {
+    padding: 20px 30px;
+
+    @media @phone {
+        padding: 20px;
+    }
+}
+
+.pizza {
+    margin-top: 30px;
+
+    .genesis {
+        font-weight: bold;
+    }
+
+    .owner {
+        font-size: 12px;
+    }
+
+    .menu {
+        a {
+            margin-right: 20px;
+        }
+    }
+}
+
+footer {
+    padding: 20px 30px;
+
+    @media @phone {
+        padding: 20px;
     }
 }
