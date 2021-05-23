@@ -19,7 +19,7 @@ export default class PizzaList extends DomNode {
 
         if (Ethereum.existsWeb3Provider === true) {
             const web3Network = await Ethereum.getWeb3Network();
-            if (/*web3Network.chainId === 1 || */web3Network.chainId === 42) {
+            if (web3Network.chainId === 1 /*|| web3Network.chainId === 42*/) {
                 if (await Ethereum.connected() === true) {
 
                     const pizzaCount = (await VirtualBitcoinContract.getPizzaCount()).toNumber();

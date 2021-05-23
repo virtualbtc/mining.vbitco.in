@@ -21,7 +21,7 @@ export default class VBTCBar extends DomNode {
             this.append(this.description = el("p", "Cannot find Ethereum network provider. Please install ", el("a", "MetaMask", { href: "https://metamask.io/", target: "_blank" }), " or something."));
         } else {
             const web3Network = await Ethereum.getWeb3Network();
-            if (/*web3Network.chainId !== 1 && */web3Network.chainId !== 42) {
+            if (web3Network.chainId === 1 /*|| web3Network.chainId === 42*/) {
                 this.vbtcAmount.empty().appendText("Load failed.");
                 this.append(this.description = el("p", "Please Change Network to Ethereum Mainnet"));
             } else if (await Ethereum.connected() !== true) {
