@@ -12,11 +12,11 @@ export default class Pizza extends DomNode {
         private pizzaId: number,
         data: PizzaStruct,
     ) {
-        super(".pizza");
+        super(`.pizza${pizzaId === 0 ? ".genesis" : ""}`);
         this.append(
             pizzaId === 0 ? el(".genesis", "Genesis Pizza") : undefined,
             new ResponsiveImage("img.icon", "/images/mining-pizza.png"),
-            el(".owner", "Owner: ", data.owner),
+            el(".owner", "Owner: ", data.owner, data.owner === Ethereum.accountAddress ? " (You!)" : ""),
             this.powerDisplay = el(".power", "Power: ", data.power.toString()),
             this.subsidyDisplay = el(".subsidy"),
             data.owner === Ethereum.accountAddress ? el(".menu",

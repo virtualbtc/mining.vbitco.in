@@ -25,7 +25,7 @@ export default class PizzaList extends DomNode {
                     const pizzaCount = (await VirtualBitcoinContract.getPizzaCount()).toNumber();
 
                     this.empty();
-                    for (let pizzaId = 0; pizzaId < pizzaCount; pizzaId += 1) {
+                    for (let pizzaId = pizzaCount - 1; pizzaId >= 0; pizzaId -= 1) {
                         const pizzaData = await VirtualBitcoinContract.getPizza(BigNumber.from(pizzaId));
                         if (
                             (this.onlyOwned !== true || pizzaData.owner === Ethereum.accountAddress) &&

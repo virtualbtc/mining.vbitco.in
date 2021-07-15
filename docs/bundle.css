@@ -223,6 +223,9 @@ main {
 .pizza .menu a {
   margin-right: 20px;
 }
+.pizza.genesis {
+  filter: grayscale(100%);
+}
 footer {
   padding: 20px 30px;
 }

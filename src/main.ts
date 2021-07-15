@@ -8,6 +8,7 @@ const main = new DomNode(document.querySelector("main")!);
 
 main.append(
     new VBTCBar(),
+    el(".pizza-price", "1 Pizza = 10,000 VBTC"),
     el(".menu",
         el("a", "Buy Pizza", {
             click: async () => {
