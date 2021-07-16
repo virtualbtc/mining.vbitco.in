@@ -63,17 +63,17 @@ class VirtualBitcoinContract extends Contract<any> {
 
     public async buyPizza(power: BigNumber): Promise<BigNumber> {
         const contract = await this.loadWalletContract();
-        return await this.contract?.buyPizza(power);
+        return await contract?.buyPizza(power);
     }
 
     public async sellPizza(pizzaId: BigNumber): Promise<void> {
         const contract = await this.loadWalletContract();
-        return await this.contract?.sellPizza(pizzaId);
+        return await contract?.sellPizza(pizzaId);
     }
 
     public async changePizza(pizzaId: BigNumber, power: BigNumber): Promise<void> {
         const contract = await this.loadWalletContract();
-        return await this.contract?.changePizza(pizzaId, power);
+        return await contract?.changePizza(pizzaId, power);
     }
 
     public async powerOf(pizzaId: BigNumber): Promise<BigNumber> { return await this.contract.powerOf(pizzaId); }
@@ -81,7 +81,7 @@ class VirtualBitcoinContract extends Contract<any> {
 
     public async mine(pizzaId: BigNumber): Promise<void> {
         const contract = await this.loadWalletContract();
-        return await this.contract?.mine(pizzaId);
+        return await contract?.mine(pizzaId);
     }
 }
 
