@@ -34,18 +34,16 @@ export default class PizzaList extends DomNode {
 
             this.empty();
             for (let pizzaId = pizzaCount - 1; pizzaId >= 0; pizzaId -= 1) {
-                const pizzaData = await VirtualBitcoinContract.getPizza(BigNumber.from(pizzaId));
-
-                if (this.loadCount !== currentLoadCount) {
-                    break;
-                }
-
-                if (
-                    (this.onlyOwned !== true || pizzaData.owner === owner) &&
-                    pizzaData.owner !== ethers.constants.AddressZero
-                ) {
-                    new Pizza(pizzaId, pizzaData).appendTo(this);
-                }
+                (async () => {
+                    const pizzaData = await VirtualBitcoinContract.getPizza(BigNumber.from(pizzaId));
+                    if (
+                        this.loadCount === currentLoadCount &&
+                        (this.onlyOwned !== true || pizzaData.owner === owner) &&
+                        pizzaData.owner !== ethers.constants.AddressZero
+                    ) {
+                        new Pizza(pizzaId, pizzaData).appendTo(this);
+                    }
+                })();
             }
         }
     }
