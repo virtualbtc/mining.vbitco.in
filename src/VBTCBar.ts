@@ -10,7 +10,7 @@ export default class VBTCBar extends DomNode {
 
     constructor() {
         super(".vbtc-bar");
-        this.append(el("", "Your VBTC: ", this.vbtcAmount = el("span", "Loading...")));
+        this.append(el(".vbtc-amount", "Your VBTC: ", this.vbtcAmount = el("span", "Loading...")));
         this.loadVBTCAmount();
 
         Wallet.on("connect", this.connectHandler);

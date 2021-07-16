@@ -13,7 +13,9 @@ main.append(
         el("a", "Buy Pizza", {
             click: async () => {
                 const power = prompt("Please enter power of Pizza.", String(1));
-                await VirtualBitcoinContract.buyPizza(BigNumber.from(power));
+                if (power !== null) {
+                    await VirtualBitcoinContract.buyPizza(BigNumber.from(power));
+                }
             },
         }),
     ),
