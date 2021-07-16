@@ -1,5 +1,10 @@
-export default class Config {
-    static PROVIDER_URL: string;
-    static VBTC_ADDRESS: string;
-}
+declare const _default: {
+    chainId: number;
+    infuraId: string;
+    rpc: string;
+    contracts: {
+        VirtualBitcoin: string;
+    };
+};
+export default _default;
 //# sourceMappingURL=Config.d.ts.map

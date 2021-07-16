@@ -1,8 +1,8 @@
-import { DomNode, el } from "@hanul/skynode";
-import VBTCBar from "./VBTCBar";
-import PizzaList from "./PizzaList";
-import VirtualBitcoinContract from "./ethereum/VirtualBitcoinContract";
 import { BigNumber } from "@ethersproject/bignumber";
+import { DomNode, el } from "@hanul/skynode";
+import VirtualBitcoinContract from "./contracts/VirtualBitcoinContract";
+import PizzaList from "./PizzaList";
+import VBTCBar from "./VBTCBar";
 
 const main = new DomNode(document.querySelector("main")!);
 
