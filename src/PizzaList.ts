@@ -8,23 +8,13 @@ import Pizza from "./Pizza";
 export default class PizzaList extends DomNode {
 
     private onlyOwned = false;
-    private loadCount = 0;
 
     constructor() {
         super(".pizza-list");
         this.loadPizzaList();
-
-        Wallet.on("connect", this.connectHandler);
     }
 
-    private connectHandler = () => {
-        this.loadPizzaList();
-    };
-
     private async loadPizzaList() {
-        this.loadCount += 1;
-        const currentLoadCount = this.loadCount;
-
         this.empty().appendText("Loading...");
 
         const owner = await Wallet.loadAddress();
@@ -37,7 +27,6 @@ export default class PizzaList extends DomNode {
                 (async () => {
                     const pizzaData = await VirtualBitcoinContract.getPizza(BigNumber.from(pizzaId));
                     if (
-                        this.loadCount === currentLoadCount &&
                         (this.onlyOwned !== true || pizzaData.owner === owner) &&
                         pizzaData.owner !== ethers.constants.AddressZero
                     ) {
@@ -46,10 +35,5 @@ export default class PizzaList extends DomNode {
                 })();
             }
         }
-    }
-
-    public delete(): void {
-        Wallet.off("connect", this.connectHandler);
-        super.delete();
     }
 }

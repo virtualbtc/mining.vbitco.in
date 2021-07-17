@@ -14,13 +14,18 @@ export default class Pizza extends DomNode {
     ) {
         super(`.pizza${pizzaId === 0 ? ".genesis" : ""}`);
         this.load();
+        Wallet.on("connect", this.connectHandler);
     }
+
+    private connectHandler = () => {
+        this.load();
+    };
 
     private async load() {
 
         const owner = await Wallet.loadAddress();
 
-        this.append(
+        this.empty().append(
             this.pizzaId === 0 ? el(".genesis", "Genesis Pizza") : undefined,
             new ResponsiveImage("img.icon", "/images/mining-pizza.png"),
             el(".owner", "Owner: ", this.data.owner, this.data.owner === owner ? " (You!)" : ""),
@@ -48,5 +53,10 @@ export default class Pizza extends DomNode {
 
         const subsidy = await VirtualBitcoinContract.subsidyOf(BigNumber.from(this.pizzaId));
         this.subsidyDisplay.appendText(`Subsidy: ${ethers.utils.formatUnits(subsidy, VirtualBitcoinContract.decimals)}`);
+    }
+
+    public delete(): void {
+        Wallet.off("connect", this.connectHandler);
+        super.delete();
     }
 }

@@ -6,6 +6,8 @@ export default class Pizza extends DomNode {
     private powerDisplay;
     private subsidyDisplay;
     constructor(pizzaId: number, data: PizzaStruct);
+    private connectHandler;
     private load;
+    delete(): void;
 }
 //# sourceMappingURL=Pizza.d.ts.map
