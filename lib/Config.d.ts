@@ -1,7 +1,5 @@
 declare const _default: {
     chainId: number;
-    infuraId: string;
-    endpoint: string;
     rpc: string;
     contracts: {
         VirtualBitcoin: string;
